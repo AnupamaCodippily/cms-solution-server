@@ -1,19 +1,23 @@
+import makeConfigTable from "./config-db";
+import dotenv from 'dotenv'
+
+// if (process.env.NODE_ENV == "development") {
+  dotenv.config();
+// }
+
 // database drivers
+import { Client } from "pg"
+const client = new Client();
 
-export default function makeConfigTable() {
-  return {
-    fetchConfiguration,
-    updateConfiguration,
-    resetConfiguration,
-    removeConfiguration
-  };
-
-  async function fetchConfiguration() {}
-
-  async function updateConfiguration() {}
-
-  async function resetConfiguration() {}
-
-  async function removeConfiguration() {}
-
+async function connectToDB() {
+  await client.connect();
+  return client;
 }
+
+const url = process.env.DM_COMMENTS_DB_URL;
+const dbName = process.env.DM_COMMENTS_DB_NAME;
+
+const connection = connectToDB();
+const db = makeConfigTable({connection})
+
+export default db;

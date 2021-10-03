@@ -5,7 +5,7 @@ export default function makeRemoveConfig ({ configurationDB } : IConfigDB ) {
         if (!configId) {
             // cannot remove the default config
         } else {
-            
+            // to do
         }
     }
 }

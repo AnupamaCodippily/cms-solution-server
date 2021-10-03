@@ -1,10 +1,11 @@
-import makeConfigTable from "../data_access";
+import configurationDB from "../data_access";
+
 import makeGetConfig from "./get-config";
 import makeRemoveConfig from "./remove-config";
 import makeResetConfig from "./reset-config";
 import makeUpdateConfig from "./update-config";
 
-const configurationDB = makeConfigTable();
+// const configurationDB = makeConfigTable();
 
 const getConfig = makeGetConfig({ configurationDB });
 const updateConfig = makeUpdateConfig({ configurationDB });
