@@ -1,3 +1,5 @@
+// model
+
 interface IConfig {
   usersCount: number;
   isCurrentConfig: boolean;

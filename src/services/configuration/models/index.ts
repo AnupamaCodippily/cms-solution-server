@@ -1,3 +1,7 @@
+// dependency injection
+
 import buildMakeConfig from "./configuration";
 
-export default buildMakeConfig;
+const makeConfig  = buildMakeConfig({});
+
+export default makeConfig;
